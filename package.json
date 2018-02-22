@@ -4,7 +4,7 @@
   "description": "Let's count zeros!",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha test.js -w"
   },
   "repository": {
     "type": "git",
