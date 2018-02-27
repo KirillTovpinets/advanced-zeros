@@ -41,12 +41,24 @@ module.exports = function getZerosCount(number, base) {
 			}
 		}
 	}
-	var devider = numMultiples[numMultiples.length - 1][0];
+	var devider = 0;
+	var devCount = 0;
+	if (numMultiples.length > 0) {
+		devider = numMultiples[numMultiples.length - 1][0];
+		devCount = numMultiples[numMultiples.length - 1][1];
+	}else{
+		devider = base;
+		devCount = 1;
+	}
+
 	var floor = Math.floor(number / devider);
 	var numZeroes = 0;
 	while(floor !== 0){
 		numZeroes += floor;
 		floor = Math.floor(floor / devider);
+	}
+	if (devCount % 2 === 0) {
+		numZeroes = Math.floor(numZeroes / 2);
 	}
 	return numZeroes;
 }
